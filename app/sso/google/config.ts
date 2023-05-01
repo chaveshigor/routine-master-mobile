@@ -3,7 +3,7 @@ import {GOOGLE_SSO_CLIENT_ID} from '@env';
 
 export function googleSsoConfigure() {
   GoogleSignin.configure({
-    scopes: ['email'],
+    scopes: ['profile', 'email'],
     webClientId: GOOGLE_SSO_CLIENT_ID,
     offlineAccess: true,
   });

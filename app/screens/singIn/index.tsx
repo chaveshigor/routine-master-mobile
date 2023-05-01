@@ -63,9 +63,13 @@ export function SignIn() {
   };
 
   const loginWithGoogle = async () => {
-    googleSsoConfigure();
-    const user = await googleSsoSignIn();
-    console.log(user);
+    try {
+      googleSsoConfigure();
+      const user = await googleSsoSignIn();
+      console.log(user);
+    } catch (error) {
+      console.log(error, 'deu ruim');
+    }
   };
 
   return (
