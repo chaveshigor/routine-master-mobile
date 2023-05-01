@@ -1,3 +1,5 @@
+import {BACKEND_BASE_URL} from '@env';
+
 type RequestParams = {
   method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
   url: string;
@@ -5,7 +7,7 @@ type RequestParams = {
 };
 
 class ApplicationApi {
-  base_url = 'http://192.168.1.12:3000/api/v1';
+  base_url = BACKEND_BASE_URL;
 
   async request({method, url, body}: RequestParams): Promise<Response | void> {
     try {

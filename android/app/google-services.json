@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "695149932602",
+    "project_id": "routine-master-c2202",
+    "storage_bucket": "routine-master-c2202.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695149932602:android:9979209cb89ff87d644503",
+        "android_client_info": {
+          "package_name": "com.routinemastermobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "695149932602-aguevbpeibv0j0cf2kc0prpp1lon5rtd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.routinemastermobile",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "695149932602-a05fv6n0dteg4s57okcbnigh0jsjqpcq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxREfnmfj8QnOwJRm1f6-yX_qmruC62AQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "695149932602-a05fv6n0dteg4s57okcbnigh0jsjqpcq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

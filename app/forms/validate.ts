@@ -14,7 +14,6 @@ async function validateForm(
 
     return true;
   } catch (error: any) {
-    console.log(error, 'oioioio');
     const validationError = {
       field: error.path,
       message: error.message,

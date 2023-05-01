@@ -14,9 +14,10 @@ import {DefaultInput} from '../../components/defaultInput';
 import {LightButton} from '../../components/lightButton';
 import {Divider} from '../../components/divider';
 import Icon from 'react-native-vector-icons/AntDesign';
-// import CreateSession from '../../api/sessions/create';
+import CreateSession from '../../api/sessions/create';
 import createSessionForm from '../../forms/sessions/create';
 import validateForm, {ValidationError} from '../../forms/validate';
+import {googleSsoConfigure, googleSsoSignIn} from '../../sso/google/config';
 
 type UserInfo = {
   email: string;
@@ -47,24 +48,24 @@ export function SignIn() {
 
   const login = async () => {
     cleanFormErrors();
-    console.log(loginInfo);
     const formValidation = await validateForm(createSessionForm, loginInfo);
 
-    console.log(formValidation, 'result');
-
     if (formValidation === true) {
-      // console.log(loginInfo, 'aaaaa');
-      // const createSessionKlass = new CreateSession(loginInfo);
-      // const response = (await createSessionKlass.run()) as any;
-      // console.log('agora vai', response.headers['map']['authorization']);
+      const createSessionKlass = new CreateSession(loginInfo);
+      (await createSessionKlass.run()) as any;
     } else {
       const formError = formValidation as ValidationError;
       const refreshState = errorInfo;
-      console.log(formError);
 
       refreshState[formError.field as keyof ErrorInfo] = formError.message;
       setErrorInfo(refreshState);
     }
+  };
+
+  const loginWithGoogle = async () => {
+    googleSsoConfigure();
+    const user = await googleSsoSignIn();
+    console.log(user);
   };
 
   return (
@@ -122,7 +123,7 @@ export function SignIn() {
           </LoginWith>
 
           <LoginCompanies>
-            <PressableIcon onPress={() => console.log('login com google')}>
+            <PressableIcon onPress={loginWithGoogle}>
               <Icon name="google" size={48} color="white" />
             </PressableIcon>
 
